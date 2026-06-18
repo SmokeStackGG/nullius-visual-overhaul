@@ -1,0 +1,38 @@
+{
+  "name": "nullius-visual-overhaul",
+  "version": "0.1.2",
+  "title": "Nullius: Visual Overhaul",
+  "author": "brickbrycebrick",
+  "description": "Replaces Nullius building graphics with modern high-resolution animated sprites, with tier coloring (yellow/red/blue) via tint masks.",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "nullius",
+    "? reskins-nullius",
+    "? tricky-old-nick",
+    "? lambent-nil",
+    "? configurable-valves",
+    "? nullius-visual-tweaks"
+  ],
+  "package": {
+    "ignore": [
+      ".work",
+      ".work/*",
+      "sprites",
+      "sprites/*",
+      "showcase",
+      "showcase/*",
+      "tools",
+      "tools/*",
+      ".claude",
+      ".claude/*",
+      ".pytest_cache",
+      "**/.pytest_cache/*",
+      "**/__pycache__/*",
+      "**/.DS_Store",
+      ".gitignore",
+      ".git",
+      ".git/*"
+    ]
+  }
+}

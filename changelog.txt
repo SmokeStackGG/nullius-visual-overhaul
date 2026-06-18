@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2026-06-18
+  Features:
+    - Reskinned the geothermal plant (arc furnace), with native reactor body animation via working_light_picture.
+    - Reskinned the hydro plant (thermal plant) and vacuum chamber (fuel refinery), including recipe-tinted paint layers.
+  Changes:
+    - Added optional dependencies: Artisanal Reskins: Nullius, Tricky Old Nick, Lambent Nil, Configurable Valves, and Nullius Lore-Accurate Visual Tweaks.
+    - The diagnostic prototype dump (nvo-debug-dump startup setting) now ships off by default.
+  Optimizations:
+    - Shared the prototype search-type list and tier-colour resolution between modules to remove duplicated code.

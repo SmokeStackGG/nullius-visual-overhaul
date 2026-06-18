@@ -1,0 +1,20 @@
+# Regenerable scratch — split/baked frames produced by the asset pipeline.
+# Never belongs in the repo or the release zip (see README "Preparing assets").
+.work/
+
+# Editor / tooling cruft
+.claude/
+.DS_Store
+**/.DS_Store
+
+# Python tool caches (tools/)
+.pytest_cache/
+**/.pytest_cache/
+**/__pycache__/
+
+# Built release archives
+*.zip
+
+# NOTE: sprites/ (raw artist source packs), showcase/ (demo GIFs), and tools/
+# (the asset-authoring toolkit) are intentionally TRACKED so the repo is a
+# complete, reproducible basis for other modders.

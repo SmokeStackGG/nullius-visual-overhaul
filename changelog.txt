@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 2026-06-18
+  Changes:
+    - Improved the mod thumbnail: centered the building art (no longer offset by the source shadow) and added a soft drop shadow.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2026-06-18
   Features:

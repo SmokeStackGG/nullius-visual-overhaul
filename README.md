@@ -1,9 +1,13 @@
-# Nullius: Visual Overhaul
+# Nullius: Hurricane Reskins
 
-Replaces Nullius building graphics with Hurricane-style high-resolution
-animated sprites. Tier coloring (1 = yellow, 2 = red, 3 = blue) is applied at
-load time by tinting the sprite's color/mask layer, so one sprite set serves
-all tiers.
+Reskins Nullius buildings with [Hurricane046](https://www.figma.com/proto/y1IQG08ZG2jIeJ5sTyF4MP/Factorio-Buildings)'s
+high-resolution animated sprites. Tier coloring (1 = yellow, 2 = red, 3 = blue)
+is applied at load time by tinting the sprite's color/mask layer, so one sprite
+set serves all tiers.
+
+Building art is © Hurricane046, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+See [LICENSE](LICENSE) for the full breakdown (mod code MIT; art CC BY 4.0; tier
+pips MIT).
 
 ## Building → sprite mapping
 
@@ -112,7 +116,7 @@ by Kirazy, used under the MIT License:
    positions.
 3. Correct the `pattern` fields in `config/buildings.lua` to match the real
    names (the shipped patterns are first-pass guesses).
-4. Search the log for `[nullius-visual-overhaul]` lines to see which
+4. Search the log for `[nullius-hurricane-reskins]` lines to see which
    buildings were reskinned and which were skipped (missing sprites, no
    pattern match, unhandled prototype type).
 5. In game, place each tier of each building and check: footprint fit, tier
@@ -457,6 +461,28 @@ on a different camera angle will not line up with the sprite.
 
 ## Releasing
 
-Flip the default of `nvo-debug-dump` to `false` in `settings.lua`, confirm
-the sprite license permits redistribution with attribution, and zip the
-folder as `nullius-visual-overhaul_0.1.0.zip`.
+The release zip must contain ONLY the files Factorio loads — `info.json`,
+`control.lua`, `data-final-fixes.lua`, `settings.lua`, `changelog.txt`,
+`thumbnail.png`, `README.md`, `LICENSE`, and the `config/`, `lib/`, `locale/`,
+`graphics/` folders. Everything else in the repo (`sprites/`, `.work/`,
+`showcase/`, `tools/`) is authoring material and must be excluded; the
+`package.ignore` list in `info.json` encodes this for `fmtk`/the Factorio mod
+tool, and the zip command below mirrors it.
+
+1. Confirm `nvo-debug-dump` defaults to `false` in `settings.lua` (it does).
+2. Bump `version` in `info.json` and add a matching `changelog.txt` block.
+3. Confirm the bundled art's license still permits redistribution with
+   attribution (Hurricane046 art is CC BY 4.0; see `LICENSE`).
+4. Zip the folder so the archive root is `nullius-hurricane-reskins_<version>`:
+
+   ```
+   cd ..
+   zip -r -X nullius-hurricane-reskins_0.1.2.zip nullius-hurricane-reskins_0.1.2 \
+     -x '*/.work/*' '*/sprites/*' '*/showcase/*' '*/tools/*' \
+        '*/.claude/*' '*/.git/*' '*/.gitignore' '*/.pytest_cache/*' \
+        '*/__pycache__/*' '*.DS_Store' '*/.DS_Store'
+   ```
+
+The mod's internal name is `nullius-hurricane-reskins`, so the unzipped dev
+folder and the zip's root folder must both be named
+`nullius-hurricane-reskins_<version>` or the game will not load it.

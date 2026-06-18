@@ -28,11 +28,11 @@ local STUBS_OFF = (settings.startup["nvo-pipe-stub-mode"]
 local SEARCH_TYPES = require("lib.search_types")
 
 local function note(msg)
-  log("[nullius-visual-overhaul] " .. msg)
+  log("[nullius-hurricane-reskins] " .. msg)
 end
 
 local function fail_or_note(msg)
-  if STRICT then error("[nullius-visual-overhaul] " .. msg) end
+  if STRICT then error("[nullius-hurricane-reskins] " .. msg) end
   note(msg)
 end
 
@@ -361,7 +361,7 @@ end
 
 local PIPS = settings.startup["nvo-tier-pips"]
   and settings.startup["nvo-tier-pips"].value
-local MOD = "__nullius-visual-overhaul__"
+local MOD = "__nullius-hurricane-reskins__"
 
 -- Tier pips: a stack of tier-coloured dots (one per tier) in the icon's
 -- top-left corner -- the reskins-framework "dots" tier labels, reproduced

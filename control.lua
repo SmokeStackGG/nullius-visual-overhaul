@@ -13,7 +13,7 @@ local function cleanup()
   -- Destroy every render object this mod created (the stale overlays); we make
   -- none now, so this is safe and idempotent. Guarded so an API hiccup can never
   -- crash load -- worst case a leftover overlay survives.
-  pcall(function() rendering.clear("nullius-visual-overhaul") end)
+  pcall(function() rendering.clear("nullius-hurricane-reskins") end)
   -- Drop the old tracking tables; harmless if already absent.
   storage.nvo_reactors = nil
   storage.nvo_pending = nil

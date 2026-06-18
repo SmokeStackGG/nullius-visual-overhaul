@@ -17,7 +17,7 @@
 -- Alternate layer file names are tolerated: "color"/"paint" for "mask",
 -- "light"/"glow" for "emission", "sh" for "shadow".
 
-local MOD = "__nullius-visual-overhaul__"
+local MOD = "__nullius-hurricane-reskins__"
 
 local sprite = {}
 

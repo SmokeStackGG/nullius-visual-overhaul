@@ -1,0 +1,65 @@
+Nullius: Hurricane Reskins — Licensing
+======================================
+
+This mod bundles work from three sources under different licenses. Each part
+is governed by the license listed for it below.
+
+--------------------------------------------------------------------------------
+1. Mod code (MIT)
+--------------------------------------------------------------------------------
+Applies to all Lua source and the Python tooling: *.lua, control.lua,
+data-final-fixes.lua, settings.lua, config/, lib/, tools/, locale/, and the
+build/authoring scripts.
+
+MIT License
+
+Copyright (c) 2026 brickbrycebrick
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+2. Building sprites (CC BY 4.0)
+--------------------------------------------------------------------------------
+Applies to the building artwork in sprites/ and the entity sprites built from
+it in graphics/entity/ (base, mask, shadow, emission, recipe, icon layers).
+
+Artwork © Hurricane046, from "Factorio Buildings":
+  https://www.figma.com/proto/y1IQG08ZG2jIeJ5sTyF4MP/Factorio-Buildings
+
+Licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this artwork, including commercially, as long
+as you give appropriate credit to Hurricane046, link to the license, and
+indicate if changes were made. The sprites bundled here have been processed
+(split, recolored into tier tint masks, repacked) from the originals.
+
+--------------------------------------------------------------------------------
+3. Tier-pip dot icons (MIT)
+--------------------------------------------------------------------------------
+Applies to graphics/icon/tiers/dots/ only.
+
+Taken from Artisanal Reskins: Framework (https://mods.factorio.com/mod/reskins-framework).
+
+MIT License — Copyright (c) 2023 Kirazy.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files, to deal in it without
+restriction, subject to including the above copyright notice. Full text at the
+reskins-framework distribution. Provided "as is", without warranty of any kind.

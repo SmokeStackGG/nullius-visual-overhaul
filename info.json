@@ -1,9 +1,9 @@
 {
-  "name": "nullius-visual-overhaul",
+  "name": "nullius-hurricane-reskins",
   "version": "0.1.2",
-  "title": "Nullius: Visual Overhaul",
+  "title": "Nullius: Hurricane Reskins",
   "author": "brickbrycebrick",
-  "description": "Replaces Nullius building graphics with modern high-resolution animated sprites, with tier coloring (yellow/red/blue) via tint masks.",
+  "description": "Reskins Nullius buildings with Hurricane046's high-resolution animated sprites, with tier coloring (yellow/red/blue) applied at load via tint masks. Building art by Hurricane046 (https://www.figma.com/proto/y1IQG08ZG2jIeJ5sTyF4MP/Factorio-Buildings), used under CC BY 4.0.",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0",

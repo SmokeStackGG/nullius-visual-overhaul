@@ -5,7 +5,9 @@ Date: 2026-06-18
     - Reskinned the geothermal plant (arc furnace), with native reactor body animation via working_light_picture.
     - Reskinned the hydro plant (thermal plant) and vacuum chamber (fuel refinery), including recipe-tinted paint layers.
   Changes:
+    - Renamed to "Nullius: Hurricane Reskins", crediting Hurricane046 (building art, CC BY 4.0). Added LICENSE, thumbnail, and full attribution.
     - Added optional dependencies: Artisanal Reskins: Nullius, Tricky Old Nick, Lambent Nil, Configurable Valves, and Nullius Lore-Accurate Visual Tweaks.
     - The diagnostic prototype dump (nvo-debug-dump startup setting) now ships off by default.
+    - Added missing in-game setting labels for the fluid-connection art and tier-pip toggles.
   Optimizations:
     - Shared the prototype search-type list and tier-colour resolution between modules to remove duplicated code.

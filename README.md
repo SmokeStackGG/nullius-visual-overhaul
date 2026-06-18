@@ -5,10 +5,6 @@ high-resolution animated sprites. Tier coloring (1 = yellow, 2 = red, 3 = blue)
 is applied at load time by tinting the sprite's color/mask layer, so one sprite
 set serves all tiers.
 
-Building art is © Hurricane046, used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-See [LICENSE](LICENSE) for the full breakdown (mod code MIT; art CC BY 4.0; tier
-pips MIT).
-
 ## Building → sprite mapping
 
 | Nullius building | Replacement sprite | source folder | status |

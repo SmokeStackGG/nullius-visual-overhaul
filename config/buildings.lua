@@ -97,10 +97,12 @@ return {
   { pattern = "crusher",        source = "glass-furnace", icon = true, icon_mask = true },
 
   -- nullius-flotation-cell-1..3 + mirror | 3.5x3.5, 4 fluid connections
-  -- No artist paint export: tier mask authored from base art (option-2 stencil
-  -- workflow). 8x8 sheet, 60 real frames (cells 60-63 empty, trimmed). Emission
-  -- split by stencil. Tinted icon pair derived from base+mask frame 0.
-  { pattern = "flotation",      source = "pathogen-lab", icon = true, icon_mask = true },
+  -- Reskinned to the fuel-refinery body with the glass liquid tank swapped in
+  -- for the exhaust chimney (graphics/entity/fuel-refinery-water). 8x8 sheet,
+  -- 64 frames; mask/emission/recipe/shadow inherited unchanged from
+  -- fuel-refinery. Icon pair reuses the fuel-refinery icon art (chimney detail
+  -- is sub-pixel at 64px).
+  { pattern = "flotation",      source = "fuel-refinery-water", icon = true, icon_mask = true },
 
   -- nullius-geothermal-build-1..3 (mining-drill, animated) AND
   -- nullius-geothermal-reactor-1..3 (reactor) | 4.8x4.8

@@ -45,7 +45,7 @@ BUILDINGS = {
     "glass-furnace":   "Crusher",
     "manufacturer":    "Foundry",
     "fuel-refinery":   "Vacuum chamber",
-    "pathogen-lab":    "Flotation cell",
+    "fuel-refinery-water": "Flotation cell",
     "atom-forge":      "Nanofabricator",
     "arc-furnace":     "Geothermal plant",
     "thermal-plant":   "Hydro plant",
@@ -58,7 +58,7 @@ MAX_TIER = {"atom-forge": 2}
 GROUPS = [
     ("group-1-electrolyzer-compressor",          ["oxidizer", "chemical-stager"]),
     ("group-2-airfilter-crusher-foundry",        ["scrubber", "glass-furnace", "manufacturer"]),
-    ("group-3-vacuum-flotation-nanofabricator",  ["fuel-refinery", "pathogen-lab", "atom-forge"]),
+    ("group-3-vacuum-flotation-nanofabricator",  ["fuel-refinery", "fuel-refinery-water", "atom-forge"]),
     ("group-4-geothermal-hydro",                 ["arc-furnace", "thermal-plant"]),
 ]
 

@@ -8,7 +8,7 @@ the title or source art changes.
 Output: thumbnail.png (square, suitable for the Factorio mod portal).
 """
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "sprites/atom-forge/preview/atom-forge-preview-static.png")
@@ -37,6 +37,25 @@ def load_font(size, bold=True):
     return ImageFont.load_default()
 
 
+def solid_bbox(art, thresh=170):
+    """Bounding box of the opaque building only, ignoring the faint detached
+    shadow in the source art (which has low alpha). Falls back to the full
+    bbox if nothing clears the threshold."""
+    alpha = art.getchannel("A")
+    mask = alpha.point(lambda a: 255 if a >= thresh else 0)
+    return mask.getbbox() or art.getbbox()
+
+
+def drop_shadow(art, blur=9, offset=(6, 8), opacity=130):
+    """A soft black silhouette of the art, blurred and offset, for grounding."""
+    pad = blur * 2
+    layer = Image.new("RGBA", (art.width + pad * 2, art.height + pad * 2), (0, 0, 0, 0))
+    sil = Image.new("RGBA", art.size, (0, 0, 0, 0))
+    sil.putalpha(art.getchannel("A").point(lambda a: opacity if a >= 170 else 0))
+    layer.paste(sil, (pad + offset[0], pad + offset[1]), sil)
+    return layer.filter(ImageFilter.GaussianBlur(blur)), pad
+
+
 def vertical_gradient(size, top, bottom):
     base = Image.new("RGB", (1, size), 0)
     for y in range(size):
@@ -54,17 +73,20 @@ def main():
     draw.rectangle([0, SIZE - band_h, SIZE, SIZE], fill=(12, 14, 13, 235))
     draw.rectangle([0, SIZE - band_h, SIZE, SIZE - band_h + 2], fill=ACCENT + (255,))
 
-    # Building art: crop to content, scale to fit the art area above the band.
+    # Building art: crop to the *building* (not its detached shadow), scale to
+    # fit the art area above the band, and center it.
     art = Image.open(SRC).convert("RGBA")
-    bbox = art.getbbox()
-    if bbox:
-        art = art.crop(bbox)
+    art = art.crop(solid_bbox(art))
     art_area_h = SIZE - band_h
-    max_w, max_h = SIZE - 24, art_area_h - 12
+    max_w, max_h = SIZE - 36, art_area_h - 20
     scale = min(max_w / art.width, max_h / art.height)
     art = art.resize((max(1, int(art.width * scale)), max(1, int(art.height * scale))), Image.LANCZOS)
     ax = (SIZE - art.width) // 2
-    ay = (art_area_h - art.height) // 2 + 4
+    ay = (art_area_h - art.height) // 2
+
+    # Soft grounding shadow beneath the building.
+    shadow, pad = drop_shadow(art)
+    canvas.alpha_composite(shadow, (ax - pad, ay - pad))
     canvas.alpha_composite(art, (ax, ay))
 
     # Title, two lines centered in the band.

@@ -17,7 +17,7 @@ set serves all tiers.
 | Nanofabricator | Gravity Assembler | `atom-forge` | Done |
 | Vacuum chamber | Fuel Refinery | `fuel-refinery` | Done (color1 blank, so tier mask authored from base-art stencil + emission split + recipe color2 + icons; verify shadow shift in-game) |
 | Crusher | Glass Furnace | `glass-furnace` | Done (tier mask + emission + icons; recipe layer pending) |
-| Flotation cell | Pathogen Lab | `pathogen-lab` | Done |
+| Flotation cell | Fuel Refinery (water-tank variant) | `fuel-refinery-water` | Done (glass liquid drum swapped in for the metal drum + looping animated bubbles; inherits fuel-refinery tier mask / split emission / recipe layer; tinted icon derived) |
 | Geothermal plant | Arc Furnace | `arc-furnace` | Done (tier mask from base-art stencil + split emission + tinted icons; in-world entity is a reactor, animated natively via working_light_picture — see "Reactor body animation") |
 
 ## Preparing assets (per building)

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 2026-06-18
+  Features:
+    - Reskinned the flotation cell with a water-tank variant of the fuel refinery body (source folder fuel-refinery-water): the central drum is now a glass tank of liquid with looping animated bubbles. Inherits the fuel refinery's tier mask, split emission, and recipe paint layer; a tinted icon pair is derived to match the new look.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 2026-06-18
   Changes:

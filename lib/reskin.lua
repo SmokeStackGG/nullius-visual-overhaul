@@ -134,7 +134,11 @@ local function build_emission_layers(cfg, tier, scale_mult)
   local outside = sprite.load_def(cfg.source, "emission_outside")
   local masked = sprite.load_def(cfg.source, "emission_mask")
   if outside and masked then
-    local color = tier_color(cfg, tier)
+    -- The tier palette carries alpha 0.5 for the normal-blend colour mask
+    -- (FFF-218, see lib/tiers.lua). This is an *additive* glow, so colourise it
+    -- with the full hue at alpha 1.0 -- a 0.5 alpha here would just dim the glow.
+    local c = tier_color(cfg, tier)
+    local color = { r = c.r, g = c.g, b = c.b, a = 1.0 }
     return sprite.equalize_frames({ em_layer(outside, nil), em_layer(masked, color) })
   end
   local em = sprite.load_def(cfg.source, "emission")
